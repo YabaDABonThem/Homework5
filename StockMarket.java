@@ -42,8 +42,24 @@ public class StockMarket {
             // Then declare a variable dollarsSpend of type double, and set its value to the keyboard's
             // keystroke (be sure to use keyboard.nextDouble()).
             // If the user enters 0, then issue a break statement, so that the while loop terminates
-            // Else, invoke the tradeSomeMore method of each Trader, and pass it the variable dollarsSpend		
-            break;
+            // Else, invoke the tradeSomeMore method of each Trader, and pass it the variable dollarsSpend	
+            System.out.println("\nName: " + trader1.getTraderName() + "\nDollars Spent: " + trader1.getDollarsSpent() + "\nBalance: " + trader1.getDollarsMade() + "\nNet Profit: " + trader1.getNetProfit());
+            System.out.println("\nName: " + trader2.getTraderName() + "\nDollars Spent: " + trader2.getDollarsSpent() + "\nBalance: " + trader2.getDollarsMade() + "\nNet Profit: " + trader2.getNetProfit());
+            System.out.println("\nName: " + trader3.getTraderName() + "\nDollars Spent: " + trader3.getDollarsSpent() + "\nBalance: " + trader3.getDollarsMade() + "\nNet Profit: " + trader3.getNetProfit());
+            System.out.println("\nName: " + trader4.getTraderName() + "\nDollars Spent: " + trader4.getDollarsSpent() + "\nBalance: " + trader4.getDollarsMade() + "\nNet Profit: " + trader4.getNetProfit());
+            
+            System.out.println("How much money do you want to bet? ");
+            double dollarsSpend = keyboard.nextDouble();
+            
+            if (dollarsSpend == 0) {
+               break;
+            }
+            else {
+               trader1.tradeSomeMore(dollarsSpend);
+               trader2.tradeSomeMore(dollarsSpend);
+               trader3.tradeSomeMore(dollarsSpend);
+               trader4.tradeSomeMore(dollarsSpend);
+            }
         }
 
     }
