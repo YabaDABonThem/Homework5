@@ -10,16 +10,26 @@ public class Trader {
     // dollarsSpent of type double
     // dollarsMade of type double
     //
+    private String traderName;
+    private double stockChangePercentage;
+    private double dollarsSpent;
+    private double dollarsMade;
     // method: getStockChangePercentage, public
     // input: void
     // output: double
     // description: retrieves the value stockChangePercentage field
     //
+    public double getStockChangePercentage() {
+      return stockChangePercentage;
+    }
     // method: setStockChangePercentage , public
     // input: percentage, which is of type double
     // output: void
     // description: assign the field stockChangePercentage to percentage
     //
+    public void setStockChangePercentage(double percentage) {
+      stockChangePercentage = percentage;
+    }
     // method: tradeSomeMore, public
     // input parameter: dollars, which is of type double
     // output: none 
@@ -37,22 +47,51 @@ public class Trader {
     //        dollarsMade -= dollars*3;
     //    }
     //
+    public void tradeSomeMore(double dollars) {
+    
+      dollarsSpent += dollars;
+      
+      Random randomNumbers = new Random();
+      double randomDouble = randomNumbers.nextDouble();
+      
+      if (randomDouble < stockChangePercentage) {
+         System.out.println(traderName + " made");
+         dollarsMade += (dollars*2);
+      }
+      
+      else {
+         System.out.println(traderName + " lost");
+         dollarsMade -= dollars*3;
+      }
+    }
     // method: getTraderName, public
     // input paramter: none
     // output: value of field traderName
     //
+    public String getTraderName() {
+      return traderName;
+    }
     // method: getDollarsSpent, public
     // input paramter: none
     // output: value of field dollarsSpent
     //
+    public double getDollarsSpent() {
+      return dollarsSpent;
+    }
     // method: getDollarsMade, public
     // input paramter: none
     // output: value of field dollarsMade;
     //
+    public double getDollarsMade() {
+      return dollarsMade;
+    }
     // method: getNetProfit, public
     // input paramter: none
     // output: result of (dollarsMade - dollarsSpent)
     //
+    public double getNetProfit() {
+      return (dollarsMade - dollarsSpent);
+    }
     // Non-default constructor
     // input paramter: name, which is of type String
     // output: NA
